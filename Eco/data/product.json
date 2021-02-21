@@ -1,0 +1,52 @@
+{"products":
+[
+        {"id":1,
+         "name":"Cereales Eco",
+         "description":"Cereales hechos a partir de copos de avena",
+         "weight":"250g",
+         "price":"3Eur",
+         "category":"Alimentación Eco",
+         "image":"cereales.jpg"
+        },
+        {"id":2,
+            "name":"Mezcla Especias vegetales",
+            "description":"Variado de sal y especias vegetales",
+            "weight":"300g",
+            "price":"5Eur",
+            "category":"Alimentación Gourmet",
+            "image":"especias.jpg"
+        },
+        {"id":3,
+            "name":"Loción Corporal",
+            "description":"Contiene acido hialurónico y aloe vera",
+            "weight":"25g",
+            "price":"7Eur",
+            "category":"Cosmética Natural",
+            "image":"cosmetica.jpg"
+        },
+        {"id":4,
+            "name":"Té matcha",
+            "description":"Infusion hecha unicamente con hojas de té verde",
+            "weight":"100g",
+            "price":"4Eur",
+            "category":"Dietética",
+            "image":"dietetica.jpg"
+        },
+        {"id":5,
+            "name":"Detergente Eco",
+            "description":"Contiene jabón y tensioactivos no iónicos",
+            "weight":"600g",
+            "price":"9Eur",
+            "category":"Droguería Eco",
+            "image":"drogueria.jpg"
+        },
+        {"id":6,
+            "name":"Bombones Eco",
+            "description":"Bombones hechos unicamente con chocolate negro y almendras",
+            "weight":"300g",
+            "price":"4Eur",
+            "category":"Especiales",
+            "image":"especiales.jpg"
+        }
+    ]
+}

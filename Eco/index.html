@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <title>EcoMarket</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/blog/">
+  </head>
+  <body>
+    
+<div class="container">
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-dark" href="#">EcoMarket</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <input class="form-control mr-sm-2" id="txt-search" type="search"
+							placeholder="Busca producto" aria-label="buscar">
+        <button class="btn btn-outline-success my-2 my-sm-0" id="btn-search"
+							type="submit">Buscar</button>
+              
+        <a class="btn btn-sm btn-outline-secondary" href="login.html">Entrar</a>
+        <a class="btn btn-sm btn-outline-secondary" href="login.html">Registrarse</a>
+      </div>
+    </div>
+  </header>
+  <div id="myBtnContainer">
+    <button class="btn active" onclick="filterSelection('Todo')"> Todo</button>
+    <button class="btn" onclick="filterSelection('Alimentación Eco')"> Alimentación Eco</button>
+    <button class="btn" onclick="filterSelection('Alimentación Gourmet')"> Alimentación Gourmet</button>
+    <button class="btn" onclick="filterSelection('Cosmética Natural')"> Cosmética Natural</button>
+    <button class="btn" onclick="filterSelection('Dietética')"> Dietética</button>
+    <button class="btn" onclick="filterSelection('Droguería Eco')"> Droguería Eco</button>
+    <button class="btn" onclick="filterSelection('Especiales')"> Especiales</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="filterDiv Alimentación Eco Todo">Cereales</div>
+  <div class="filterDiv Alimentación Gourmet Todo">Especias</div>
+  <div class="filterDiv Cosmética Natural Todo">Loción</div>
+  <div class="filterDiv Dietética Todo">Té</div>
+  <div class="filterDiv Droguería Eco Todo">Detergente</div>
+  <div class="filterDiv Especiales Todo">Bombones</div>
+</div>
+
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 text-white rounded" style="background-color: mediumseagreen;">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic">¡Bienvenido a EcoMarket!</h1>
+      <p class="lead my-3">Aquí encontrarás una amplia variedad de productos ecológicos y sostenibles para el medio ambiente...</p>
+    </div>
+  </div>
+  <div id="list-product" class="row mb-2"> 
+  </div>
+		<!-- Modal de pedido producto-->
+		<div id="pedido" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalLabel">Pedido</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<input type="hidden" id="order_id" name="order_id" value="" />
+							<div class="form-group">
+								<label>Producto:</label>
+								<span id="order_name">nombre producto</span>
+							</div>
+							<div class="form-group">
+								<label>Cantidad:</label>
+								<input type="number" id="order_quantity" name="cantidad" size="4" value="1" min="1"
+									max="10" />
+							</div>
+							<div class="form-group">
+								<label>Precio:</label>
+                <span id="order_price">Precio producto</span>  
+                
+							</div>
+							<!--ús de collapse-->
+							<p>
+								<a class="link" data-toggle="collapse" href="#collapsePedido" role="button"
+									aria-expanded="false" aria-controls="collapsePedido">
+									Leer condiciones
+								</a>
+							</p>
+							<div class="collapse bg-light" id="collapsePedido">
+								<div class="card card-body">detalles</div>
+							</div>
+							<!--fi collapse -->
+
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: mediumseagreen;">Cancelar</button>
+						<button id="btn-order" type="button" class="btn btn-primary" style="background-color: mediumseagreen;">Realizar pedido</button>
+					</div>
+				</div>
+			</div>
+		</div>
+</main>
+
+<!--<footer class="blog-footer">
+  <p>By Marta</p>
+</footer> -->
+<footer class="seccion-final">
+  <ul>
+    <p>Atención al cliente</p>
+    <ol>Seguimiento pedido</ol>
+    <ol>Ayuda</ol>
+    <ol>Gastos envío</ol>
+  </ul>
+  <ul>
+    <p>Contacto</p>
+    <ol>Dirección</ol>
+    <ol>Teléfono</ol>
+    <ol>E-mail</ol>
+  </ul>
+  <ul>
+    <p>Síguenos</p>
+    <ol>Instagram</ol>
+    <ol>Twitter</ol>
+    <ol>Facebook</ol>
+  </ul>
+</footer> 
+
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+  crossorigin="anonymous"></script>
+
+<script type="module" src="./js/app.js"></script>
+<script>
+  filterSelection("all")
+  function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("filterDiv");
+    if (c == "all") c = "";
+    for (i = 0; i < x.length; i++) {
+      w3RemoveClass(x[i], "show");
+      if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    }
+  }
+  
+  function w3AddClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+    }
+  }
+  
+  function w3RemoveClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      while (arr1.indexOf(arr2[i]) > -1) {
+        arr1.splice(arr1.indexOf(arr2[i]), 1);     
+      }
+    }
+    element.className = arr1.join(" ");
+  }
+  
+  // Add active class to the current button (highlight it)
+  var btnContainer = document.getElementById("myBtnContainer");
+  var btns = btnContainer.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function(){
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
+  </script>
+</body>
+</html>
